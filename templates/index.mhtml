@@ -1,0 +1,27 @@
+<%inherit file="base/default.mhtml" />
+
+<%block name="page_title">${ site.title or 'Frontpage' }</%block>
+
+<%namespace name="data" file="/lib/data.mc" />
+
+<%namespace name="simple" file="/shortcodes/simple.mc" inheritable="True" />
+<%namespace name="banner" file="/shortcodes/banner.mc" inheritable="True" />
+<%namespace name="gallery" file="/shortcodes/gallery.mc" inheritable="True" />
+<%namespace name="spotlight" file="/shortcodes/spotlight.mc" inheritable="True" />
+<%namespace name="items" file="/shortcodes/items.mc" inheritable="True" />
+
+<%block name="content">
+  % if site.frontpage_data:
+    % for yaml_file in site.frontpage_data:
+      <% 
+        info = data.get_yaml(yaml_file)
+        comp = getattr(self, info.get('section_type', 'simple'))
+      %>
+      ${ comp.body(info) }
+    % endfor
+  % else:
+    <section>
+      <div class="msg error">In order to display something interesting here, please specify <code>site.frontpage_data</code>. For details, see the documentation.</div>
+    </section>
+  % endif
+</%block>

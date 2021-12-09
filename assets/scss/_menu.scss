@@ -1,0 +1,92 @@
+nav#topmenu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 998;
+    font-size: 1.5em;
+    ul {
+        display: block;
+        margin: 0;
+        li {
+            display: block;
+            margin: 0;
+            padding: 0;
+            a {
+                background: white;
+                text-decoration: none;
+                display: inline-block;
+                padding: .25em .5em;
+                border-radius: .25em;
+                &:hover {
+                    background: #eee;
+                }
+            }
+        }
+    }
+}
+
+dialog[open] {
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    min-width: 100%;
+    height: inherit;
+    min-height: 100%;
+    padding: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    article {
+        position: relative;
+        margin: 2rem 0;
+        padding: 2rem 1rem;
+        overflow: hidden;
+        border-radius: .25rem;
+        background: white;
+        box-shadow: rgba(27, 40, 50, 0.04) 0px 2px 16px 0px, rgba(27, 40, 50, 0.08) 0px 2px 32px 0px, rgba(27, 40, 50, 0.024) 0px 0px 0px 1px;
+        min-width: 250px;
+        h3 {
+            text-align: center;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            display: block;
+            li {
+                margin: 0;
+                padding: .5rem 0;
+                display: block;
+                font-size: 1.15rem;
+                font-weight: bold;
+                a {
+                    display: block;
+                    text-align: center;
+                    text-decoration: none;
+                }
+            }
+        }
+        a.close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 1.5rem;
+            height: 1.5rem;
+            opacity: 1;
+            background-size: cover;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+            background-position: center;
+            background-size: auto 1rem;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+dialog:not[open] {
+    display: none;
+}

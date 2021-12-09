@@ -1,0 +1,2 @@
+<%inherit file="base/default.mhtml" />
+<%block name="content_inner">${ next.body() }</%block>

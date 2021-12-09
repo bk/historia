@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<!--
+	 Story by HTML5 UP
+	 html5up.net | @ajlkn
+	 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+	<title>${ self.page_title() }</title>
+	<%block name="head_meta">
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      % if page.keywords or site.keywords:
+        <meta name="keywords" content="${ page.keywords or site.keywords }">
+	  % endif
+      % if page.description or site.description:
+        <meta name="description" content="${ page.description or site.description }">
+	  % endif
+	</%block>
+	<%block name="head_favicon">
+	  <link rel="icon" href="/favicon.ico" sizes="any">
+	</%block>
+	<%block name="head_css">
+	  <link rel="stylesheet" type="text/css" href="/css/main.css">
+      % if site.with_fontawesome:
+	  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	  % endif
+	  <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+	</%block>
+	<%block name="head_extra"></%block>
+	<style type="text/css"><%block name="inline_css"></%block></style>
+  </head>
+  <body class="is-preload">
+	% if site.with_topmenu:
+	  <!-- menu -->
+	  <nav id="topmenu">
+      <ul>
+        <li><a href="#" id="menu-trigger" data-target="main-menu" class="modal-trigger menu-icon"><strong>&#x2630;</strong></a></li>
+      </ul>
+	  </nav>
+    <dialog class="modal" id="main-menu">
+      <article>
+        <a href="#close" aria-label="Close" class="close" data-target="main-menu"></a>
+        <h3>${ site.topmenu_title or 'Menu' }</h3>
+        <ul>
+					% for link in site.topmenu_links:
+						<li>
+							<a href="${ link['url'] }"
+								 class="${'active' if SELF_URL.startswith(link['url']) else ''}">
+								${ link['title'] }
+							</a>
+						</li>
+					% endfor
+				</ul>
+			</article>
+		</dialog>
+	% endif
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="<%block name="body_wrapper_class">divided</%block>">
+	  <%block name="content">
+		<%block name="content_inner">${ CONTENT if CONTENT else next.body() }</%block>
+	  </%block>
+
+	  <%block name="footer">
+		<!-- Footer -->
+		<footer class="wrapper style1 align-center">
+		  <div class="inner">
+			<ul class="icons">
+			  <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+			  <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+			  <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+			  <li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+			  <li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		  </div>
+		</footer>
+	  </%block>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.scrollex.min.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/browser.min.js"></script>
+	<script src="/js/breakpoints.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+
+  </body>
+</html>
+
+<%def name="page_title()">${ page.title or site.title or 'Story without title' }</%def>

@@ -1,0 +1,9 @@
+<%inherit file="base/default.mhtml" />
+<%namespace name="simple" file="/shortcodes/simple.mc" />
+<%block name="content">
+  ${ simple.body({
+      'title': page.title,
+      'content': CONTENT,
+      'style': (page.style or 'style1')},
+      heading_tag='h1') }
+</%block>
