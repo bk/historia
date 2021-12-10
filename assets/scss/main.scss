@@ -1,19 +1,18 @@
-$breakpoints: ();
-
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-/* @import 'fontawesome-all.css'; */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i');
 
 /*
-	Story by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	wmk-story by bk
+	Ported from Story by HTML5UP.
+	This wmk theme is licensed under the Creative Commons Attribution 3.0 License.
 */
+
+$breakpoints: null;
 
 // Breakpoints.
 
@@ -181,10 +180,7 @@ $breakpoints: ();
 	@import 'components/wrapper';
 	@import 'components/items';
 	@import 'components/index';
-	@import "menu";
 
 // Layout.
 
 	@import 'layout/wrapper';
-
-img { max-width: 100%; height: auto; }
