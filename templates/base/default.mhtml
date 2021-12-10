@@ -22,9 +22,7 @@
 	</%block>
 	<%block name="head_css">
 	  <link rel="stylesheet" type="text/css" href="/css/main.css">
-      % if site.with_fontawesome:
-	  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	  % endif
+	  <link rel="stylesheet" type="text/css" href="/webfonts/fontawesome-all.min.css">
 	  <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
 	</%block>
 	<%block name="head_extra"></%block>
@@ -63,19 +61,21 @@
 	  </%block>
 
 	  <%block name="footer">
-		<!-- Footer -->
-		<footer class="wrapper style1 align-center">
-		  <div class="inner">
-			<ul class="icons">
-			  <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-			  <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-			  <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-			  <li><a href="#" class="icon brands style2 fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-			  <li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-			<p>&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-		  </div>
-		</footer>
+			% if site.with_footer:
+				<!-- Footer -->
+				<footer class="wrapper style1 align-center">
+					<div class="inner">
+						% if site.footer_icons:
+							<ul class="icons">
+								% for icn in site.footer_icons:
+									<li><a href="${ icn['link'] }" class="icon brands style2 fa-${ icn['type'] }"><span class="label">${  icn['label'] }</span></a></li>
+								% endfor
+							</ul>
+						% endif
+						<p>${ site.footer_text or 'Theme: <a href="https://github.com/bk/wmk-story/">wmk-story</a>. Design: <a href="https://html5up.net/">HTML5 UP</a>.' }</p>
+					</div>
+				</footer>
+			% endif
 	  </%block>
 
 	</div>

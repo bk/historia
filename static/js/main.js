@@ -372,14 +372,16 @@ const closeModal = modal => {
 }
 
 // Close with a click outside
-document.getElementById('main-menu').addEventListener('click', event => {
-  if (visibleModal != null) {
-    console.log('click outside -- closing');
-    const modalContent = visibleModal.querySelector('article');
-    const isClickInside = modalContent.contains(event.target);
-    !isClickInside && closeModal(visibleModal);
-  }
-});
+const mainMenu = document.getElementById('main-menu');
+if (mainMenu) {
+  mainMenu.addEventListener('click', event => {
+    if (visibleModal != null) {
+      const modalContent = visibleModal.querySelector('article');
+      const isClickInside = modalContent.contains(event.target);
+      !isClickInside && closeModal(visibleModal);
+    }
+  });
+}
 
 // Close with Esc key
 document.addEventListener('keydown', event => {
