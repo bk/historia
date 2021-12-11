@@ -1,19 +1,32 @@
 <%page args="info" />
+<%doc>
+Keys in info:
+- wrapper_style (str or dict)
+- gallery_style (str or dict)
+- title
+- intro
+- images*: list of dicts, each with img*, thumb, title, caption, button_text
+</%doc>
 <%namespace file="/lib/data.mc" import="get_yaml" />
+<%namespace file="/lib/styling_utils.mc" import="wrapper_style, gallery_style" />
 <%
 if isinstance(info, str):
     info = get_yaml(info)
+gstyle = gallery_style(info.get('gallery_style', {}))
+wstyle = wrapper_style(info.get('wrapper_style', {'align': 'center'}))
 %>
-<section class="${ info.get('wrapper_style', 'wrapper style1 align-center') }">
-  <div class="inner">
-    % if 'title' in info:
-      <h2>${ info['title'] }</h2>
-    % endif
-    % if 'intro' in info:
-      <p>${ info['intro'] }</p>
-    % endif
-  </div>
-  <div class="gallery ${ info.get('gallery_style', 'style2 medium lightbox onscroll-fade-in') }">
+<section class="wrapper ${ wstyle }">
+  % if 'title' in info or 'intro' in info:
+    <div class="inner">
+      % if 'title' in info:
+        <h2>${ info['title'] }</h2>
+      % endif
+      % if 'intro' in info:
+        <p>${ info['intro'] }</p>
+      % endif
+    </div>
+  % endif
+  <div class="gallery ${ gstyle }">
     % for img in info['images']:
       ${ _img(img)  }
     % endfor

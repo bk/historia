@@ -1,11 +1,14 @@
 <%page args="info" />
 <%namespace file="/lib/data.mc" import="get_yaml" />
+<%namespace file="/lib/styling_utils.mc" import="wrapper_style, items_style" />
 <%
 if isinstance(info, str):
     info = get_yaml(info)
+istyle = items_style(info.get('items_style', {}))
+wstyle = wrapper_style(info.get('wrapper_style', {'align': 'center'}))
 %>
 
-<section class="${ info.get('wrapper_style', 'wrapper style1 align-center') }">
+<section class="wrapper ${ wstyle }">
   <div class="inner">
     % if 'title' in info:
       <h2>${ info['title'] }</h2>
@@ -13,7 +16,7 @@ if isinstance(info, str):
     % if 'intro' in info:
       <p>${ info['intro'] }
     % endif
-    <div class="items ${ info.get('items_style', 'style1 medium onscroll-fade-in') }">
+    <div class="items ${ istyle }">
       % for it in info['items']:
         ${ _item(it) }
       % endfor
@@ -22,7 +25,7 @@ if isinstance(info, str):
 </section>
 
 <%def name="_item(it)">
-  <section>
+  <section${ ' class="{}"'.format(it['css_class']) if 'css_class' in it else '' }>
     % if isinstance(it, str):
       ${ it }
     % else:
