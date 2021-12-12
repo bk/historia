@@ -1,5 +1,5 @@
 ---
-title: "wmk Story: Example content"
+title: "Historia: Example content"
 template: base/default.mhtml
 ---
 
@@ -10,7 +10,7 @@ template: base/default.mhtml
       'imgpos': 'right',
       'fullscreen': True,
       'onload': ['img-fadein', 'faderight'], },
-  'title': "Wmk Story",
+  'title': "Historia",
   'content': '''This is a <strong>Banner</strong> element, and it's generally used as an introduction or opening statement. You can customize its <span class="demo-controls">appearance with a number of modifiers</span>, as well as assign it an optional <code>onload</code> or <code>onscroll</code> transition modifier (<a href="#reference-banner">details</a>).''',
   'image': '/images/banner.jpg',
   'button': {'link': '#first', 'class': 'large wide smooth-scroll-middle', 'label': 'Get started'}

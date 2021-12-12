@@ -1,9 +1,9 @@
-theme: wmk-story
+theme: historia
 site:
     title: Publius Vergilius Maro
     description: Vergilus fuit poeta Romanus, qui aevo Augustano floruit. Tribus innotuit litterarum Latinarum operibus maximis: Bucolicis, Georgicis, et Aeneide carmine heroico.
     keywords: Aeneis, Bucolica, Georgica, Vergilius, poeta, aevum Augustanum
-    base_url: https://wmk-story.baldr.net
+    base_url: https://historia.baldr.net
     lang: la
     frontpage_data:
         - frontpage/banner.yaml

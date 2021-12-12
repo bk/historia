@@ -72,7 +72,7 @@
 								% endfor
 							</ul>
 						% endif
-						<p>${ site.footer_text or 'Theme: <a href="https://github.com/bk/wmk-story/">wmk-story</a>. Design: <a href="https://html5up.net/">HTML5 UP</a>.' }</p>
+						<p>${ site.footer_text or 'Theme: <a href="https://github.com/bk/historia/">Historia</a>. Design: <a href="https://html5up.net/">HTML5 UP</a>.' }</p>
 					</div>
 				</footer>
 			% endif

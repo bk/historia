@@ -1,20 +1,20 @@
-# Wmk Story
+# Historia
 
-Wmk Story is a theme for [wmk](https://github.com/bk/wmk) based on the
+Historia is a theme for [wmk](https://github.com/bk/wmk) based on the
 single-page HTML template [Story](https://html5up.net/story) by [HTML5
 UP](https://html5up.net).
 
-Although Wmk Story is primarily intended for a single-page website, it is
+Although Historia is primarily intended for a single-page website, it is
 possible to use it for a multiple-page site as well by configuring a main menu
 for navigation (using `site.with_topmenu` -- see below). However, the theme is
 probably not a good fit for a blog site.
 
-A demo of the theme can be seen [here](https://wmk-story.baldr.net/).
+A demo of the theme can be seen [here](https://historia.baldr.net/).
 
 ## Configuration
 
 Installation is the same as any other wmk theme: clone, link or copy into
-`themes` and put the line `theme: wmk-story` into `wmk_config.yaml`.
+`themes` and put the line `theme: historia` into `wmk_config.yaml`.
 
 The following keys in the `site` portion of `wmk_config.yaml` are used by the
 theme:
@@ -41,7 +41,7 @@ theme:
 
 ## Shortcodes
 
-The shortcodes for Wmk Story take a single argument, `info`, which may be
+The shortcodes for Historia take a single argument, `info`, which may be
 specified directly as a Python dict or as the name of a YAML file containing a
 representation of that dict.
 
@@ -164,7 +164,7 @@ If `style` is specified as a dict, it makes use of the following keys:
 
 ## License
 
-Like the original HTML5 UP Story template, Wmk Story is licensed under the
+Like the original HTML5 UP Story template, Historia is licensed under the
 [Creative Commons Attribution 3.0
 License](https://creativecommons.org/licenses/by/3.0/).
 

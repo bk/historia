@@ -1,11 +1,11 @@
 ---
-title: Shortcodes for wmk Story
+title: Shortcodes for Historia
 subtitle: Section types in markdown content
 ---
 
 ## General
 
-The shortcodes for Wmk Story take a single argument, `info`, which may be
+The shortcodes for Historia take a single argument, `info`, which may be
 specified directly as a Python dict or as the name of a YAML file containing a
 representation of that dict.
 
