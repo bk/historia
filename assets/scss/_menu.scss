@@ -1,9 +1,9 @@
 nav#topmenu {
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: fixed;
+    right: 5px;
+    top: 5px;
     z-index: 998;
-    font-size: 1.5em;
+    font-size: 1.2rem;
     ul {
         display: block;
         margin: 0;
@@ -15,7 +15,7 @@ nav#topmenu {
                 background: white;
                 text-decoration: none;
                 display: inline-block;
-                padding: .25em .5em;
+                padding: .15em .5em;
                 border-radius: .25em;
                 &:hover {
                     background: #eee;
@@ -53,6 +53,8 @@ dialog[open] {
         min-width: 250px;
         h3 {
             text-align: center;
+            padding-bottom: .5em;
+            border-bottom: 2px solid #ccc;
         }
         ul {
             margin: 0;
@@ -60,7 +62,7 @@ dialog[open] {
             display: block;
             li {
                 margin: 0;
-                padding: .5rem 0;
+                padding: .25rem 0;
                 display: block;
                 font-size: 1.15rem;
                 font-weight: bold;
