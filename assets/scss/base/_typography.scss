@@ -106,6 +106,10 @@
 		top: -0.5rem;
 	}
 
+    small {
+        font-size: smaller;
+    }
+
 	blockquote {
 		border-left: solid (_size(border-width) * 4);
 		font-style: italic;
