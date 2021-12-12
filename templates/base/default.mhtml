@@ -63,12 +63,12 @@
 	  <%block name="footer">
 			% if site.with_footer:
 				<!-- Footer -->
-				<footer class="wrapper style1 align-center">
+				<footer class="wrapper style1 align-center invert color1">
 					<div class="inner">
 						% if site.footer_icons:
 							<ul class="icons">
 								% for icn in site.footer_icons:
-									<li><a href="${ icn['link'] }" class="icon brands style2 fa-${ icn['type'] }"><span class="label">${  icn['label'] }</span></a></li>
+									<li><a href="${ icn['link'] }" class="icon${ ' brands' if icn.get('brands', False) else '' }${ 'solid' if icn.get('solid', False) else '' }  style2 fa-${ icn['type'] }"><span class="label">${  icn['label'] }</span></a></li>
 								% endfor
 							</ul>
 						% endif
