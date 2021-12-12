@@ -72,9 +72,12 @@ return {
 <%
 if isinstance(style, str):
     return style
+# Backwards compatibility
+if 'style' in style and 'subtype' not in style:
+    style['subtype'] = style['style']
 stylestr = ''
 style_default = _banner_or_spotlight()
-style_default['style'] = {
+style_default['subtype'] = {
     '_default': 'split',
     'split': 'style1',  # 50/50 split
     'boxed': 'style2',  # boxed content on top of image
@@ -101,9 +104,12 @@ return stylestr.strip()
 <%
 if isinstance(style, str):
     return style
+# Backwards compatibility
+if 'style' in style and 'subtype' not in style:
+    style['subtype'] = style['style']
 stylestr = ''
 style_default = _banner_or_spotlight()
-style_default['style'] = {
+style_default['subtype'] = {
     '_default': 'circle',
     'split': 'style1',  # 30/70 split
     'circle': 'style2', # image as a circle
@@ -134,9 +140,12 @@ return stylestr.strip()
 <%
 if isinstance(style, str):
     return style
+# Backwards compatibility
+if 'style' in style and 'subtype' not in style:
+    style['subtype'] = style['style']
 stylestr = ''
 style_default = {
-    'style': {
+    'subtype': {
         '_default': 'grid',
         'grid': 'style1',
         'carousel': 'style2',
@@ -173,9 +182,12 @@ return stylestr.strip()
 <%
 if isinstance(style, str):
     return style
+# Backwards compatibility
+if 'style' in style and 'subtype' not in style:
+    style['subtype'] = style['style']
 stylestr = ''
 style_default = {
-    'style': {
+    'subtype': {
         '_default': 'bordered',
         'bordered': 'style1', # grid separated by borders
         'boxed': 'style2',    # outlined items separated by borders
@@ -207,8 +219,11 @@ return stylestr.strip()
 <%
 if isinstance(style, str):
     return style
+# Backwards compatibility
+if 'style' in style and 'subtype' not in style:
+    style['subtype'] = style['style']
 style_default = {
-    'style': {
+    'subtype': {
         '_default': 'padded',
         'none': '',
         'padded': 'style1', # margin and padding around '.inner' div
