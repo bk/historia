@@ -1,0 +1,39 @@
+theme: wmk-story
+site:
+    title: Publius Vergilius Maro
+    description: Vergilus fuit poeta Romanus, qui aevo Augustano floruit. Tribus innotuit litterarum Latinarum operibus maximis: Bucolicis, Georgicis, et Aeneide carmine heroico.
+    keywords: Aeneis, Bucolica, Georgica, Vergilius, poeta, aevum Augustanum
+    base_url: https://wmk-story.baldr.net
+    lang: la
+    frontpage_data:
+        - frontpage/banner.yaml
+        - frontpage/spot1.yaml
+        - frontpage/spot2.yaml
+        - frontpage/spot3.yaml
+        - frontpage/items.yaml
+        - frontpage/gallery.yaml
+    with_topmenu: true
+    topmenu_title: Tabula paginarum
+    topmenu_links:
+        - title: Prima
+          url: /
+        - title: Aeneis
+          url: /aeneis/
+        - title: Bucolica
+          url: /bucolica/
+        - title: Georgica
+          url: /georgica/
+        - title: Vita Vergilii
+          url: /vita/
+    with_footer: true
+    footer_icons:
+        - type: twitter
+          label: Twitter
+          link: https://twitter.com/publiusvergiliusmaro
+        - type: facebook-f
+          label: Facebook
+          link: https://facebook.com/publiusvergiliusmaro
+        - type: envelope
+          label: Epistula electronica
+          link: "mailto:publius@vergiliusmaro.org"
+    footer_text: Mantua me genuit, Calabri rapuere, tenet nunc <br>Parthenope, cecini pascua, rura, duces
