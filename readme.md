@@ -132,7 +132,7 @@ The `items` shortcode expects the following keys in `info`:
 
 - `title`, optional
 - `intro`, optional,
-- `items`, a list of items (required). Each item may be either a string or a dict containing the keys `fa_icon`, `title` and `text`. The `fa_icon` represents a Fontawesome icon; it is a dict with the keys `name` (required), `solid` (a boolean, default False), `brands` (boolean, default False).
+- `items`, a list of items (required). Each item may be either a string or a dict containing (at least some of) the keys `fa_icon`/`img`, `link`, `title` and `text`. The `fa_icon` represents a Fontawesome icon; it is a dict with the keys `name` (required), `solid` (a boolean, default False), `brands` (boolean, default False). The `img` similarly may be either a string or a dict with the keys `src`, `class`, `alt`, `style`, `width` and `height`.
 - `wrapper_style`: Styling for the wrapper, see the `simple` shortcode for options.
 - `items_style`: Styling for the items container and items.
 
