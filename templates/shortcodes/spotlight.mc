@@ -8,6 +8,7 @@ Expected keys in 'info':
 - content
 - image*
 - button (with label, link, maybe class)
+- image_only (boolean, removes div.content)
 </%doc>
 <%namespace file="/lib/data.mc" import="get_yaml" />
 <%namespace file="/lib/styling_utils.mc" import="spotlight_style" />
@@ -15,10 +16,14 @@ Expected keys in 'info':
 if isinstance(info, str):
     info = get_yaml(info)
 stylestr = spotlight_style(info.get('style', {}))
+have_content = False
 %>
 <section class="spotlight ${ stylestr }">
+% if not info.get('image_only', False):
   <div class="content">
+    % if 'title' in info:
     <h2>${ info['title'] }</h2>
+    % endif
     % if 'subtitle' in info:
       <p class="major">${ info['subtitle'] }</p>
     % endif
@@ -32,7 +37,8 @@ stylestr = spotlight_style(info.get('style', {}))
     </ul>
     % endif
   </div>
+% endif
   <div class="image">
-    <img src="${ info['image'] }" alt="${ info['title'] |h }" />
+    <img src="${ info['image'] }" alt="${ info.get('title', '') |h }" />
   </div>
 </section>

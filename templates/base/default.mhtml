@@ -55,7 +55,7 @@
 	% endif
 
 	<!-- Wrapper -->
-	<div id="wrapper" class="<%block name="body_wrapper_class">divided</%block>">
+	<div id="wrapper" class="<%block name="body_wrapper_class">${ page.body_wrapper_class or 'divided' }</%block>">
 	  <%block name="content">
 		<%block name="content_inner">${ CONTENT if CONTENT else next.body() }</%block>
 	  </%block>
